@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es">
+<head>
+	<meta charset="iso-8859-1">
+	<meta charset="utf-8">
+	<title>Contacto | Gran Restaurante</title>
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<link rel="stylesheet" type="text/css" href="css/fontello.css">
+<link rel="stylesheet" type="text/css" href="css/contacto.css">
+<link rel="shortcut icon" href= "imagenes/2.ico" type="image/x-icon" />
+<script src="js/sweetalert.min.js"></script>
+
+<script language="javascript" src="jquery/jquery-1.3.min.js"></script>
+
+
+<script language="javascript">
+
+$(document).ready(function() {
+
+   
+    $(' #fo3').submit(function() {
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            success: function(data) {
+                $('#resultado').html(data);
+             document.forms['fo3'].reset(); 
+
+            }
+        });
+        
+
+
+        return false;
+    }); 
+})  ;
+
+
+
+</script>
+</head>
+<body>
+
+
+
+
+<header class="main-header">
+	<div class="container container--flex">
+	<div class="logo-container column column--50"> 
+    <h1 class="logo">Gran Restaurante</h1>
+    </div>
+    <div class="main-header__contactInfo column column--50"> 
+   <p class="main-header__contactInfo__phone">
+   	<span class="icon-phone">
+   	999-999-999</span>
+   </p>
+
+   <p class="main-header__contactInfo__address">
+   	<span class="icon-location">
+   	Ciudad Vieja- Montevideo</span>
+   </p>
+   </header>
+<nav class="main-nav">
+<div class="container container--flex">
+<span class="icon-menu" id="btnmenu"></span>
+<ul class="menu" id="menu">
+	<li class="menu__item">  <a href="index.html" class="menu__link  ">Inicio</a>
+	</li>
+<li class="menu__item">  <a href="nosotros.html" class="menu__link" >Nosotros</a>
+	</li>
+
+	<li class="menu__item"> <a href="galeria.html" class="menu__link" > Galer&iacute;a </a>
+	</li>
+	<li class="menu__item"> <a href="contacto.html"  class="menu__link menu__link--select">Contacto </a>
+	</li>
+</ul>
+<div class="social-icon">
+	<a href="" class="social-icon__link"><span class="icon-facebook"></span></a>
+	<a href="" class="social-icon__link"><span class="icon-twitter"></span></a>
+    <a href="" class="social-icon__link"><span class="icon-mail"></span></a>
+</div></div></nav>
+
+<section class="banner">
+	<img src="imagenes/galeria/ga7.jpg" alt="" class="banner__img">
+<div class="banner__content">D&eacute;janos
+ un Mensaje.</div></section>
+
+<main class="main">
+
+	<section class="group contacto">
+<h2 class="group__title">Cont&aacute;ctenos</h2>
+<div class="container container--flex">
+<div class="contacto-information column column--50">
+	<h3 class="column__title"> Informaci&oacute;n
+	 de contacto </h3>
+
+	<p class="column__txt"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud.</p>
+<p class="column__txt"> <span class="icon-phone
+"></span>
+	Tel&eacute;fono 1:
+999-999-999</p>
+<p class="column__txt"><span class="icon-phone
+"></span>
+	Tel&eacute;fono 2:
+555-555-555</p>
+<p class="column__txt"><span class="icon-location
+"></span>
+Ciudad Vieja - Montevideo</p>
+<p class="column__txt"><span class="icon-mail
+"></span>
+consulta@mirestaurante.com</p>
+
+<div class="social-icon">
+	<a href="" class="social-icon__link"><span class="icon-facebook"></span></a>
+	<a href="" class="social-icon__link"><span class="icon-twitter"></span></a>
+    <a href="" class="social-icon__link"><span class="icon-mail"></span></a>
+</div>
+
+</div>
+
+<form  id="fo3" name="fo3" action="correo.php" method="POST" class="formulario column column--50">
+<label for="" class="formulario__label" > Nombre: </label>
+<input type="text" class="formulario__input-txt" name="nombre" required="required">
+
+<label for="" class="formulario__label" > Correo:
+ </label>
+<input type="text" class="formulario__input-txt" name="correo" required="required">
+
+<label for="" class="formulario__label" > Tel&eacute;fono:
+ </label>
+<input type="text" class="formulario__input-txt" name="telefono" required="required">
+<label for="" class="formulario__label"> Mensaje:
+</label>
+<textarea name="mensaje" id="" cols="30" rows="10"class="formulario__textarea" required="required">
+	
+</textarea>
+
+<input type="submit" class=" btn formulario__btn" value="enviar">
+
+
+</form>
+<div id="resultado"></div>
+</section>
+
+
+
+
+</main>
+
+<footer class="main-footer">
+	<div class="container container--flex">
+<div class="column column--33">
+<h2 class="column__title"> Porqu&eacute; Visitarnos?</h2>
+
+<p class="column__txt"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.  </p>
+</div>
+
+
+<div class="column column--33">
+<h2 class="column__title">Contact&aacute;nos </h2>
+
+<p class="column__txt"> Ciudad Vieja - Montevideo  </p>
+<p class="column__txt"> Tel&eacute;fonos: 999-999-999 </p>
+<p class="column__txt"> consulta@mirestaurante.com </p>
+</div>
+
+
+<div class="column column--33">
+<h2 class="column__title">S&iacute;guenos en nuestras redes </h2>
+
+<p class="column__txt"> <a href=" " class="icon-facebook">Facebook</a> </p>
+<p class="column__txt"><a href=" " class="icon-twitter"> S&iacute;guenos en twitter</a> </p>
+<p class="column__txt"><a href=" " class="icon-youtube"> Visita nuestro canal</a> </p>
+</div>
+
+
+<p class="copy"> &copy;2019 Mi Restaurant / Todos los derechos reservados.</p>
+</div>
+
+
+
+
+</footer>
+<script src="js/menu.js"></script>
+
+
+
+</body>
+</html>
+
+
+
+
+
